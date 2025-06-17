@@ -1,11 +1,6 @@
 import SteamID from 'steamid';
 import querystring from 'node:querystring';
-
-// https://stackoverflow.com/a/66726426/7504056
-import { createRequire } from 'node:module';
-const require = createRequire(import.meta.url);
-const Package = require('../../package.json');
-
+import Package from '../package.json' with { type: 'json' };
 import { CacheMap, MemoryCacheMap } from './Cache.js';
 import { fetch, assertApp, assertID } from './utils.js';
 import { City, Country, State } from './structures/Locations.js';
